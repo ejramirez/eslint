@@ -1,6 +1,6 @@
 /**
- * @fileoverview Sanitize inputs
- * @author Eric
+ * @fileoverview Sanitizes inputs
+ * @author 
  */
 "use strict";
 
@@ -8,9 +8,9 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-var rule = require("../../../lib/rules/1"),
+var rule = require("../../../lib/rules/sanitize-input"),
 
-    RuleTester = require("eslint").RuleTester;
+    RuleTester = require("../../../lib/testers/rule-tester");
 
 
 //------------------------------------------------------------------------------
@@ -18,7 +18,7 @@ var rule = require("../../../lib/rules/1"),
 //------------------------------------------------------------------------------
 
 var ruleTester = new RuleTester();
-ruleTester.run("1", rule, {
+ruleTester.run("sanitize-input", rule, {
 
     valid: [
 
@@ -27,7 +27,7 @@ ruleTester.run("1", rule, {
 
     invalid: [
         {
-            code: "var i = \"<script><script>\";",
+            code: "var i = \"<script>alert(\"Unsanitized\");<script>\";",
             errors: [{
                 message: "Fill me in.",
                 type: "Me too"

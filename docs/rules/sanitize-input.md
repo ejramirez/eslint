@@ -1,4 +1,4 @@
-# Sanitize inputs (1)
+# Sanitizes inputs (sanitize-input)
 
 Please describe the origin of the rule here.
 
