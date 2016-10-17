@@ -1,6 +1,6 @@
 /**
  * @fileoverview Sanitizes inputs
- * @author 
+ * @author
  */
 "use strict";
 
