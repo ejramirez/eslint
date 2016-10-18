@@ -234,6 +234,7 @@
         "wrap-regex": "off",
         "no-template-curly-in-string": "off",
         "yield-star-spacing": "off",
-        "yoda": "off"
+        "yoda": "off",
+        "sanitize-input": 1
     }
 }
