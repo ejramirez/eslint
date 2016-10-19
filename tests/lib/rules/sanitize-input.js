@@ -7,8 +7,8 @@
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
-
-const rule = require("../../../lib/rules/sanitize-input"),
+/* eslint no-var: "off", curly: "error" */
+var rule = require("../../../lib/rules/sanitize-input"),
 
     RuleTester = require("../../../lib/testers/rule-tester");
 
@@ -16,8 +16,8 @@ const rule = require("../../../lib/rules/sanitize-input"),
 //------------------------------------------------------------------------------
 // Tests
 //------------------------------------------------------------------------------
-
-const ruleTester = new RuleTester();
+/* eslint no-var: "off", curly: "error" */
+var ruleTester = new RuleTester();
 
 ruleTester.run("sanitize-input", rule, {
 
@@ -25,16 +25,15 @@ ruleTester.run("sanitize-input", rule, {
 
         // give me some code that won't trigger a warning
         "var $ = require('jquery');",
-        "var filter = require('lodash/fp/filter')"
+        "var filter = require('lodash/fp/filter');"
     ],
 
     invalid: [
         {
             code: "var _ = require('your favorite fp library');",
-            errors: [{
-                message: "Prefer importing single functions over a full FP library",
-                type: "VariableDeclaration"
-            }]
+            errors: [{ message: "Prefer importing single functions over a full FP library", type: "VariableDeclaration"}]
         }
     ]
 });
+
+module.exports.schema = [];
